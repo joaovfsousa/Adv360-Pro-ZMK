@@ -35,19 +35,19 @@
 
         default_layer {
             bindings = <
-&kp GRAVE         &kp N1  &kp N2  &kp N3  &kp N4       &kp N5  &kp LC(LG(LA(LS(O))))                                                        &kp LC(LG(LA(LS(V))))  &kp N6  &kp N7      &kp N8        &kp N9        &kp N0    &kp MINUS
-&kp TAB           &kp Q   &kp W   &kp E   &kp R        &kp T   &kp MINUS                                                                    &kp EQUAL              &kp Y   &kp U       &kp I         &kp O         &kp P     &kp BSLH
-&kp ESC           &kp A   &kp S   &kp D   &kp F        &kp G   &kp LEFT_BRACKET       &kp C_VOL_DN  &kp C_VOL_UP      &none      &none      &kp RIGHT_BRACKET      &kp H   &kp J       &kp K         &kp L         &kp SEMI  &kp SQT
-&kp LSHFT         &kp Z   &kp X   &kp C   &kp V        &kp B                                        &kp LALT          &kp LGUI                                     &kp N   &kp M       &kp COMMA     &kp DOT       &kp FSLH  &kp RSHFT
-&kp LC(UP_ARROW)  &none   &none   &none   &kp LA(TAB)          &kp SPACE              &mo 1         &kp LGUI          &kp LCTRL  &kp ENTER  &kp BACKSPACE                  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &kp LG(SPACE)
+&kp GRAVE         &kp N1            &kp N2  &kp N3  &kp N4       &kp N5  &kp LC(LG(LA(LS(O))))                                                        &kp LC(LG(LA(LS(V))))  &kp N6  &kp N7      &kp N8        &kp N9        &kp N0    &kp MINUS
+&kp TAB           &kp Q             &kp W   &kp E   &kp R        &kp T   &kp MINUS                                                                    &kp EQUAL              &kp Y   &kp U       &kp I         &kp O         &kp P     &kp BSLH
+&kp ESC           &kp A             &kp S   &kp D   &kp F        &kp G   &kp LEFT_BRACKET       &kp C_VOL_DN  &kp C_VOL_UP      &none      &none      &kp RIGHT_BRACKET      &kp H   &kp J       &kp K         &kp L         &kp SEMI  &kp SQT
+&kp LSHFT         &kp Z             &kp X   &kp C   &kp V        &kp B                                        &kp LALT          &kp LGUI                                     &kp N   &kp M       &kp COMMA     &kp DOT       &kp FSLH  &kp RSHFT
+&kp LC(UP_ARROW)  &kp LC(UP_ARROW)  &none   &none   &kp LA(TAB)          &kp SPACE              &mo 1         &kp LGUI          &kp LCTRL  &kp ENTER  &kp BACKSPACE                  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &kp LG(SPACE)
             >;
         };
 
         layer_FN {
             bindings = <
-&trans  &kp F1        &kp F2          &kp F3        &kp F4          &kp F5           &kp F11                                                     &kp F12     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10               &kp F24
+&trans  &kp F1        &kp F2          &kp F3        &kp F4          &kp F5           &kp F11                                                     &kp F12     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10               &trans
 &trans  &kp NUMBER_1  &kp N2          &kp N3        &kp NUMBER_4    &kp NUMBER_5     &bt BT_PRV                                                  &bt BT_NXT  &kp N6          &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9     &kp NUMBER_0          &trans
-&trans  &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9    &kp NUMBER_0     &trans                  &trans  &trans      &to 0   &to 2   &trans      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp LG(LS(NUMBER_2))  &trans
+&trans  &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8  &kp NUMBER_9    &kp NUMBER_0     &bt BT_CLR              &trans  &trans      &to 0   &to 2   &trans      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp LG(LS(NUMBER_2))  &trans
 &trans  &trans        &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW                                  &trans      &trans                      &trans          &trans          &trans        &trans           &kp LG(LS(N5))        &trans
 &trans  &trans        &trans          &trans        &trans                           &rgb_ug RGB_MEFS_CMD 5  &trans  &trans      &trans  &trans  &trans                      &trans          &trans        &trans           &trans                &trans
             >;

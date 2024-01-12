@@ -59,7 +59,7 @@
 &trans     &trans  &trans  &trans  &trans  &trans  &trans                                           &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans         &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans  &trans  &trans  &trans  &trans                  &trans         &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &trans  &trans  &trans  &trans          &trans  &trans  &kp LCTRL      &kp LGUI  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &trans  &trans  &trans  &trans          &trans  &trans  &kp LCTRL      &kp LGUI  &trans  &trans          &trans  &trans  &trans  &trans  &kp LEFT_WIN
             >;
         };
     };

@@ -111,11 +111,11 @@
 
         T_nav {
             bindings = <
-&none  &none               &none              &none                  &none                        &none                          &none                                   &none  &none                           &none                    &none              &none              &none               &none
-&none  &kp F1              &kp F2             &kp F3                 &kp F4                       &kp F5                         &none                                   &none  &kp F6                          &kp F7                   &kp F8             &kp F9             &kp F10             &none
-&none  &hm LCTRL NUMBER_1  &hm LALT NUMBER_7  &hm LEFT_GUI NUMBER_3  &hm LEFT_SHIFT LG(NUMBER_4)  &hm LS(LC(LA(LGUI))) NUMBER_5  &none   &none  &none      &none  &none  &none  &hm LS(LA(LC(EQUAL))) NUMBER_6  &hm LEFT_SHIFT NUMBER_7  &hm LGUI NUMBER_8  &hm LALT NUMBER_9  &hm LCTRL NUMBER_0  &none
-&none  &none               &none              &none                  &none                        &kp F11                                       &none      &none                &kp F12                         &none                    &none              &none              &none               &none
-&none  &none               &none              &none                  &none                                                       &trans  &none  &none      &none  &none  &none                                  &none                    &none              &none              &none               &none
+&none  &none          &none           &none               &none                 &none                       &none                                   &none  &none                       &none                &none              &none           &none                       &none
+&none  &bt BT_PRV     &bt BT_NXT      &rgb_ug RGB_BRD     &rgb_ug RGB_BRI       &bt BT_CLR                  &none                                   &none  &none                       &none                &none              &none           &kp LG(LS(NUMBER_5))        &none
+&none  &hm LCTRL TAB  &hm LALT SPACE  &hm LEFT_GUI SPACE  &hm LEFT_SHIFT SPACE  &hm LS(LC(LA(LGUI))) SPACE  &none   &none  &none      &none  &none  &none  &hm LS(LA(LC(EQUAL))) LEFT  &hm LEFT_SHIFT DOWN  &hm LGUI UP_ARROW  &hm LALT RIGHT  &hm LCTRL LG(LS(NUMBER_2))  &none
+&none  &kp C_MUTE     &kp C_VOL_DN    &kp C_VOL_UP        &kp C_PLAY_PAUSE      &kp C_NEXT                                 &none      &none                &none                       &none                &none              &kp LC(A)       &kp LG(SPACE)               &none
+&none  &none          &none           &none               &none                                             &trans  &none  &none      &none  &none  &none                              &none                &none              &none           &none                       &none
             >;
         };
     };

@@ -47,6 +47,22 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <29 44>;
+            layers = <3>;
+        };
+
+        capsword {
+            bindings = <&caps_word>;
+            key-positions = <47 58>;
+            layers = <3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 

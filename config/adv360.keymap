@@ -110,19 +110,19 @@
             bindings = <
 &none  &none               &none              &none                  &none                    &none                          &none                                   &none  &none                           &none                    &none              &none              &none               &none
 &none  &kp NUMBER_6        &kp N7             &kp N8                 &kp N9                   &kp N0                         &none                                   &none  &none                           &none                    &none              &none              &none               &none
-&none  &hm LCTRL NUMBER_1  &hm LALT NUMBER_2  &hm LEFT_GUI NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &hm LS(LC(LA(LGUI))) NUMBER_5  &none   &none  &none      &none  &none  &none  &hm LS(LA(LC(EQUAL))) NUMBER_6  &hm LEFT_SHIFT NUMBER_7  &hm LGUI NUMBER_8  &hm LALT NUMBER_9  &hm LCTRL NUMBER_0  &none
+&none  &hm LCTRL NUMBER_1  &hm LALT NUMBER_2  &hm LEFT_GUI NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &hm LS(LC(LA(LGUI))) NUMBER_5  &none  &none   &none      &none  &none  &none  &hm LS(LA(LC(EQUAL))) NUMBER_6  &hm LEFT_SHIFT NUMBER_7  &hm LGUI NUMBER_8  &hm LALT NUMBER_9  &hm LCTRL NUMBER_0  &none
 &none  &kp LA(NUMBER_1)    &kp LA(NUMBER_2)   &kp LA(NUMBER_3)       &kp LA(NUMBER_4)         &kp LA(NUMBER_5)                              &none      &none                &kp LA(NUMBER_6)                &kp LA(NUMBER_7)         &kp LA(NUMBER_8)   &kp LA(NUMBER_9)   &kp LA(NUMBER_0)    &none
-&none  &none               &none              &none                  &none                                                   &trans  &none  &none      &none  &none  &none                                  &none                    &none              &none              &none               &none
+&none  &none               &none              &none                  &none                                                   &none  &trans  &none      &none  &none  &none                                  &none                    &none              &none              &none               &none
             >;
         };
 
         T_symbols {
             bindings = <
-&none  &none                   &none                &none               &none                 &none                            &none                                   &none  &none                       &none                &none           &none                 &none                    &none
-&none  &kp EXCLAMATION         &kp AT_SIGN          &kp HASH            &kp DOLLAR            &kp PERCENT                      &none                                   &none  &kp CARET                   &kp AMPERSAND        &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none
-&none  &hm LCTRL LEFT_BRACKET  &hm LALT LEFT_BRACE  &hm LEFT_GUI GRAVE  &hm LEFT_SHIFT MINUS  &hm LS(LC(LA(LGUI))) UNDERSCORE  &none  &none   &none      &none  &none  &none  &hm LS(LA(LC(LGUI))) EQUAL  &hm LEFT_SHIFT PLUS  &hm LGUI TILDE  &hm LALT RIGHT_BRACE  &hm LCTRL RIGHT_BRACKET  &none
-&none  &none                   &none                &none               &kp SQT               &kp BACKSLASH                                   &none      &none                &kp PIPE                    &kp DOUBLE_QUOTES    &none           &none                 &kp LS(LG(NUMBER_2))     &none
-&none  &none                   &none                &none               &none                                                  &none  &trans  &none      &none  &none  &none                              &none                &none           &none                 &none                    &none
+&none  &none                   &none                &none               &none                 &none                            &none                                   &none  &none                       &none                &none              &none                 &none                    &none
+&none  &kp EXCLAMATION         &kp AT_SIGN          &kp HASH            &kp DOLLAR            &kp PERCENT                      &none                                   &none  &kp CARET                   &kp AMPERSAND        &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none
+&none  &hm LCTRL LEFT_BRACKET  &hm LALT LEFT_BRACE  &hm LEFT_GUI GRAVE  &hm LEFT_SHIFT MINUS  &hm LS(LC(LA(LGUI))) UNDERSCORE  &none  &none  &none      &none  &none   &none  &hm LS(LA(LC(LGUI))) EQUAL  &hm LEFT_SHIFT PLUS  &hm LGUI TILDE     &hm LALT RIGHT_BRACE  &hm LCTRL RIGHT_BRACKET  &none
+&none  &none                   &none                &kp SINGLE_QUOTE    &kp BACKSLASH         &none                                          &none      &none                 &none                       &kp PIPE             &kp DOUBLE_QUOTES  &none                 &kp LS(LG(NUMBER_2))     &none
+&none  &none                   &none                &none               &none                                                  &none  &none  &none      &none  &trans  &none                              &none                &none              &none                 &none                    &none
             >;
         };
 

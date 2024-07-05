@@ -15,6 +15,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
+&lt {
+    tapping-term-ms = <150>;
+    quick-tap-ms = <100>;
+    flavor = "tap-unless-interrupted";
+    hold-trigger-key-positions = <>;
+};
+
 / {
     behaviors {
         #include "macros.dtsi"
@@ -28,6 +35,30 @@
             quick_tap_ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        lhm: lhm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LHM";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <40 22 23 25 24 26 58 57 56 55 54 41 42 43 69 70 44>;
+        };
+
+        rhm: rhm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RHM";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <15 16 17 18 19 29 30 31 32 33 48 49 50 51 47 65 66>;
         };
     };
 
@@ -98,41 +129,41 @@
 
         T_base {
             bindings = <
-&none  &none        &none       &none           &none             &none                   &none                                                             &none          &none                   &none             &none       &none       &none                &none
-&none  &kp Q        &kp W       &kp E           &kp R             &kp T                   &none                                                             &none          &kp Y                   &kp U             &kp I       &kp O       &kp P                &none
-&none  &hm LCTRL A  &hm LALT S  &hm LEFT_GUI D  &hm LEFT_SHIFT F  &hm LS(LC(LA(LGUI))) G  &none        &none         &none      &ConnectToMac  &none        &none          &hm LS(LA(LC(LGUI))) H  &hm LEFT_SHIFT J  &hm LGUI K  &hm LALT L  &hm LCTRL SEMICOLON  &none
-&none  &kp Z        &kp X       &kp C           &kp V             &kp B                                              &none      &none                                      &kp N                   &kp M             &kp COMMA   &kp DOT     &kp FSLH             &none
-&none  &none        &none       &none           &none                                     &lt 6 SPACE  &lt 4 ESCAPE  &none      &none          &lt 5 ENTER  &kp BACKSPACE                          &none             &none       &none       &none                &none
+&none  &none         &none        &none            &none             &none                    &none                                                             &none          &none                    &none              &none        &none        &none                 &none
+&none  &kp Q         &kp W        &kp E            &kp R             &kp T                    &none                                                             &none          &kp Y                    &kp U              &kp I        &kp O        &kp P                 &none
+&none  &lhm LCTRL A  &lhm LALT S  &lhm LEFT_GUI D  &hm LEFT_SHIFT F  &lhm LS(LC(LA(LGUI))) G  &none        &none         &none      &ConnectToMac  &none        &none          &rhm LS(LA(LC(LGUI))) H  &rhm LEFT_SHIFT J  &rhm LGUI K  &rhm LALT L  &rhm LCTRL SEMICOLON  &none
+&none  &kp Z         &kp X        &kp C            &kp V             &kp B                                               &none      &none                                      &kp N                    &kp M              &kp COMMA    &kp DOT      &kp FSLH              &none
+&none  &none         &none        &none            &none                                      &lt 6 SPACE  &lt 4 ESCAPE  &none      &none          &lt 5 ENTER  &kp BACKSPACE                           &none              &none        &none        &none                 &none
             >;
         };
 
         T_numbers {
             bindings = <
-&none  &none               &none              &none                  &none                    &none                          &none                                     &none          &none                           &none                    &none              &none              &none               &none
-&none  &kp NUMBER_6        &kp N7             &kp N8                 &kp N9                   &kp N0                         &none                                     &none          &none                           &none                    &none              &none              &none               &none
-&none  &hm LCTRL NUMBER_1  &hm LALT NUMBER_2  &hm LEFT_GUI NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &hm LS(LC(LA(LGUI))) NUMBER_5  &none  &none   &none      &none  &none    &none          &hm LS(LA(LC(EQUAL))) NUMBER_6  &hm LEFT_SHIFT NUMBER_7  &hm LGUI NUMBER_8  &hm LALT NUMBER_9  &hm LCTRL NUMBER_0  &none
-&none  &kp LA(NUMBER_1)    &kp LA(NUMBER_2)   &kp LA(NUMBER_3)       &kp LA(NUMBER_4)         &kp LA(NUMBER_5)                              &none      &none                          &kp LA(NUMBER_6)                &kp LA(NUMBER_7)         &kp LA(NUMBER_8)   &kp LA(NUMBER_9)   &kp LA(NUMBER_0)    &none
-&none  &none               &none              &none                  &none                                                   &none  &trans  &none      &none  &kp TAB  &kp BACKSPACE                                  &none                    &none              &none              &none               &none
+&none  &none                &none               &none                   &none                     &none                           &none                                     &none          &none                            &none                     &none               &none               &none                &none
+&none  &kp NUMBER_6         &kp N7              &kp N8                  &kp N9                    &kp N0                          &none                                     &none          &none                            &none                     &none               &none               &none                &none
+&none  &lhm LCTRL NUMBER_1  &lhm LALT NUMBER_2  &lhm LEFT_GUI NUMBER_3  &lhm LEFT_SHIFT NUMBER_4  &lhm LS(LC(LA(LGUI))) NUMBER_5  &none  &none   &none      &none  &none    &none          &rhm LS(LA(LC(EQUAL))) NUMBER_6  &rhm LEFT_SHIFT NUMBER_7  &rhm LGUI NUMBER_8  &rhm LALT NUMBER_9  &rhm LCTRL NUMBER_0  &none
+&none  &kp LA(NUMBER_1)     &kp LA(NUMBER_2)    &kp LA(NUMBER_3)        &kp LA(NUMBER_4)          &kp LA(NUMBER_5)                               &none      &none                          &kp LA(NUMBER_6)                 &kp LA(NUMBER_7)          &kp LA(NUMBER_8)    &kp LA(NUMBER_9)    &kp LA(NUMBER_0)     &none
+&none  &none                &none               &none                   &none                                                     &none  &trans  &none      &none  &kp TAB  &kp BACKSPACE                                   &none                     &none               &none               &none                &none
             >;
         };
 
         T_symbols {
             bindings = <
-&none  &none                   &none                &none               &none                 &none                            &none                                   &none          &none                       &none                &none              &none                 &none                    &none
-&none  &kp EXCLAMATION         &kp AT_SIGN          &kp HASH            &kp DOLLAR            &kp PERCENT                      &none                                   &none          &kp CARET                   &kp AMPERSAND        &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none
-&none  &hm LCTRL LEFT_BRACKET  &hm LALT LEFT_BRACE  &hm LEFT_GUI GRAVE  &hm LEFT_SHIFT MINUS  &hm LS(LC(LA(LGUI))) UNDERSCORE  &none  &none  &none      &none  &none   &none          &hm LS(LA(LC(LGUI))) EQUAL  &hm LEFT_SHIFT PLUS  &hm LGUI TILDE     &hm LALT RIGHT_BRACE  &hm LCTRL RIGHT_BRACKET  &none
-&none  &none                   &none                &kp SINGLE_QUOTE    &kp BACKSLASH         &none                                          &none      &none                         &none                       &kp PIPE             &kp DOUBLE_QUOTES  &none                 &kp LS(LG(NUMBER_2))     &none
-&none  &none                   &none                &none               &none                                                  &none  &none  &none      &none  &trans  &kp BACKSPACE                              &none                &none              &none                 &none                    &none
+&none  &none                    &none                 &none                &none                  &none                             &none                                   &none          &none                        &none                 &none              &none                  &none                     &none
+&none  &kp EXCLAMATION          &kp AT_SIGN           &kp HASH             &kp DOLLAR             &kp PERCENT                       &none                                   &none          &kp CARET                    &kp AMPERSAND         &kp ASTERISK       &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS     &none
+&none  &lhm LCTRL LEFT_BRACKET  &lhm LALT LEFT_BRACE  &lhm LEFT_GUI GRAVE  &lhm LEFT_SHIFT MINUS  &lhm LS(LC(LA(LGUI))) UNDERSCORE  &none  &none  &none      &none  &none   &none          &rhm LS(LA(LC(LGUI))) EQUAL  &rhm LEFT_SHIFT PLUS  &rhm LGUI TILDE    &rhm LALT RIGHT_BRACE  &rhm LCTRL RIGHT_BRACKET  &none
+&none  &none                    &none                 &kp SINGLE_QUOTE     &kp BACKSLASH          &none                                           &none      &none                         &none                        &kp PIPE              &kp DOUBLE_QUOTES  &none                  &kp LS(LG(NUMBER_2))      &none
+&none  &none                    &none                 &none                &none                                                    &none  &none  &none      &none  &trans  &kp BACKSPACE                               &none                 &none              &none                  &none                     &none
             >;
         };
 
         T_nav {
             bindings = <
-&none  &none           &none            &none                     &none                         &none                        &none                                   &none  &none           &none           &none         &none            &none                       &none
-&none  &none           &kp LEFT_ARROW   &kp UP_ARROW              &kp DOWN_ARROW                &kp RIGHT_ARROW              &none                                   &none  &none           &none           &none         &none            &none                       &none
-&none  &hm LCTRL C_PP  &hm LALT C_PREV  &hm LEFT_GUI C_VOLUME_UP  &hm LEFT_SHIFT C_VOLUME_DOWN  &hm LS(LC(LA(LGUI))) C_NEXT  &none   &none  &none      &none  &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &hm LCTRL LG(LS(NUMBER_2))  &none
-&none  &kp LG(Z)       &kp LG(X)        &kp LG(C)                 &kp LG(V)                     &none                                       &none      &none                &none           &none           &none         &none            &kp LS(LG(NUMBER_5))        &none
-&none  &none           &none            &none                     &none                                                      &trans  &none  &none      &none  &none  &mo 7                  &none           &none         &none            &none                       &none
+&none  &none            &none             &none                      &none                          &none                         &none                                   &none  &none           &none           &none         &none            &none                        &none
+&none  &none            &kp LEFT_ARROW    &kp UP_ARROW               &kp DOWN_ARROW                 &kp RIGHT_ARROW               &none                                   &none  &none           &none           &none         &none            &none                        &none
+&none  &lhm LCTRL C_PP  &lhm LALT C_PREV  &lhm LEFT_GUI C_VOLUME_UP  &lhm LEFT_SHIFT C_VOLUME_DOWN  &lhm LS(LC(LA(LGUI))) C_NEXT  &none   &none  &none      &none  &none  &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &rhm LCTRL LG(LS(NUMBER_2))  &none
+&none  &kp LG(Z)        &kp LG(X)         &kp LG(C)                  &kp LG(V)                      &none                                        &none      &none                &none           &none           &none         &none            &kp LS(LG(NUMBER_5))         &none
+&none  &none            &none             &none                      &none                                                        &trans  &none  &none      &none  &none  &mo 7                  &none           &none         &none            &none                        &none
             >;
         };
 

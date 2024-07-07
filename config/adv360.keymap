@@ -73,6 +73,12 @@
             bindings = <&caps_word>;
             key-positions = <47 58>;
         };
+
+        caps-shift {
+            bindings = <&caps_word>;
+            key-positions = <32 41>;
+            require-prior-idle-ms = <200>;
+        };
     };
 
     keymap {

@@ -72,7 +72,7 @@
             bindings = <
 &none  &none        &none       &none           &none             &none                   &none                                                   &none            &none                   &none             &none       &none       &none                &none
 &none  &kp Q        &kp W       &kp E           &kp R             &kp T                   &none                                                   &none            &kp Y                   &kp U             &kp I       &kp O       &kp P                &none
-&none  &hml LCTRL A  &hml LALT S  &hml LEFT_GUI D  &hml LEFT_SHIFT F  &hml LS(LC(LA(LGUI))) G  &none        &none         &none      &none  &none      &none            &hml LS(LA(LC(LGUI))) H  &hml LEFT_SHIFT J  &hml LGUI K  &hml LALT L  &hml LCTRL SEMICOLON  &none
+&none  &hml LCTRL A  &hml LALT S  &hml LEFT_GUI D  &hml LEFT_SHIFT F  &hml LS(LC(LA(LGUI))) G  &none        &none         &none      &none  &none      &none            &hmr LS(LA(LC(LGUI))) H  &hmr LEFT_SHIFT J  &hmr LGUI K  &hmr LALT L  &hmr LCTRL SEMICOLON  &none
 &none  &kp Z        &kp X       &kp C           &kp V             &kp B                                              &none      &none                              &kp N                   &kp M             &kp COMMA   &kp DOT     &kp FSLH             &none
 &none  &none        &none       &none           &none                                     &lt 1 SPACE  &lt 3 ESCAPE  &none      &none  &kp ENTER  &lt 2 BACKSPACE                          &none             &none       &none       &none                &none
             >;
@@ -82,7 +82,7 @@
             bindings = <
 &none  &none               &none              &none                  &none                    &none                          &none                                     &none   &none                           &none                    &none              &none              &none               &none
 &none  &kp NUMBER_6        &kp N7             &kp N8                 &kp N9                   &kp N0                         &none                                     &none   &none                           &none                    &none              &none              &none               &none
-&none  &hml LCTRL NUMBER_1  &hml LALT NUMBER_2  &hml LEFT_GUI NUMBER_3  &hml LEFT_SHIFT NUMBER_4  &hml LS(LC(LA(LGUI))) NUMBER_5  &none   &none   &none      &none  &none   &none   &hml LS(LA(LC(EQUAL))) NUMBER_6  &hml LEFT_SHIFT NUMBER_7  &hml LGUI NUMBER_8  &hml LALT NUMBER_9  &hml LCTRL NUMBER_0  &none
+&none  &hml LCTRL NUMBER_1  &hml LALT NUMBER_2  &hml LEFT_GUI NUMBER_3  &hml LEFT_SHIFT NUMBER_4  &hml LS(LC(LA(LGUI))) NUMBER_5  &none   &none   &none      &none  &none   &none   &hmr LS(LA(LC(EQUAL))) NUMBER_6  &hmr LEFT_SHIFT NUMBER_7  &hmr LGUI NUMBER_8  &hmr LALT NUMBER_9  &hmr LCTRL NUMBER_0  &none
 &none  &kp LA(NUMBER_1)    &kp LA(NUMBER_2)   &kp LA(NUMBER_3)       &kp LA(NUMBER_4)         &kp LA(NUMBER_5)                               &none      &none                  &kp LA(NUMBER_6)                &kp LA(NUMBER_7)         &kp LA(NUMBER_8)   &kp LA(NUMBER_9)   &kp LA(NUMBER_0)    &none
 &none  &none               &none              &none                  &none                                                   &trans  &trans  &none      &none  &trans  &trans                                  &none                    &none              &none              &none               &none
             >;
@@ -92,7 +92,7 @@
             bindings = <
 &none  &none                   &none                &none               &none                 &none                            &none                                     &none   &none                       &none                &none              &none                 &none                    &none
 &none  &kp EXCLAMATION         &kp AT_SIGN          &kp HASH            &kp DOLLAR            &kp PERCENT                      &none                                     &none   &kp CARET                   &kp AMPERSAND        &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &none
-&none  &hml LCTRL LEFT_BRACKET  &hml LALT LEFT_BRACE  &hml LEFT_GUI GRAVE  &hml LEFT_SHIFT MINUS  &hml LS(LC(LA(LGUI))) UNDERSCORE  &none   &none   &none      &none  &none   &none   &hml LS(LA(LC(LGUI))) EQUAL  &hml LEFT_SHIFT PLUS  &hml LGUI TILDE     &hml LALT RIGHT_BRACE  &hml LCTRL RIGHT_BRACKET  &none
+&none  &hml LCTRL LEFT_BRACKET  &hml LALT LEFT_BRACE  &hml LEFT_GUI GRAVE  &hml LEFT_SHIFT MINUS  &hml LS(LC(LA(LGUI))) UNDERSCORE  &none   &none   &none      &none  &none   &none   &hmr LS(LA(LC(LGUI))) EQUAL  &hmr LEFT_SHIFT PLUS  &hmr LGUI TILDE     &hmr LALT RIGHT_BRACE  &hmr LCTRL RIGHT_BRACKET  &none
 &none  &none                   &none                &kp SINGLE_QUOTE    &kp BACKSLASH         &none                                            &none      &none                  &none                       &kp PIPE             &kp DOUBLE_QUOTES  &none                 &kp LS(LG(NUMBER_2))     &none
 &none  &none                   &none                &none               &none                                                  &trans  &trans  &none      &none  &trans  &trans                              &none                &none              &none                 &none                    &none
             >;
@@ -102,7 +102,7 @@
             bindings = <
 &none  &none           &none            &none                     &none                         &none                        &none                                     &none   &none           &none           &none         &none            &none                       &none
 &none  &none           &kp LEFT_ARROW   &kp UP_ARROW              &kp DOWN_ARROW                &kp RIGHT_ARROW              &none                                     &none   &none           &none           &none         &none            &none                       &none
-&none  &hml LCTRL C_PP  &hml LALT C_PREV  &hml LEFT_GUI C_VOLUME_UP  &hml LEFT_SHIFT C_VOLUME_DOWN  &hml LS(LC(LA(LGUI))) C_NEXT  &none   &none   &none      &none  &none   &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &hml LCTRL LG(LS(NUMBER_2))  &none
+&none  &hml LCTRL C_PP  &hml LALT C_PREV  &hml LEFT_GUI C_VOLUME_UP  &hml LEFT_SHIFT C_VOLUME_DOWN  &hml LS(LC(LA(LGUI))) C_NEXT  &none   &none   &none      &none  &none   &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &hmr LCTRL LG(LS(NUMBER_2))  &none
 &none  &kp LG(Z)       &kp LG(X)        &kp LG(C)                 &kp LG(V)                     &none                                        &none      &none                  &none           &none           &none         &none            &kp LS(LG(NUMBER_5))        &none
 &none  &none           &none            &none                     &none                                                      &trans  &trans  &none      &none  &trans  &trans                  &none           &none         &none            &none                       &none
             >;

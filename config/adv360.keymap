@@ -66,6 +66,7 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <29 30>;
+            require-prior-idle-ms = <100>;
         };
 
         capsword {

@@ -50,7 +50,29 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        loader-l {
+            bindings = <&bootloader>;
+            key-positions = <15 29 47>;
+        };
+
+        loader-r {
+            bindings = <&bootloader>;
+            key-positions = <26 44 58>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <29 30>;
+        };
+
+        capsword {
+            bindings = <&caps_word>;
+            key-positions = <47 58>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -87,11 +109,11 @@
 
         T_nav {
             bindings = <
-&none  &none            &none             &none                      &none                          &none                         &none                                     &none   &none           &none           &none         &none            &none                        &none
-&none  &none            &kp LEFT_ARROW    &kp UP_ARROW               &kp DOWN_ARROW                 &kp RIGHT_ARROW               &none                                     &none   &none           &none           &none         &none            &none                        &none
-&none  &hml LCTRL C_PP  &hml LALT C_PREV  &hml LEFT_GUI C_VOLUME_UP  &hml LEFT_SHIFT C_VOLUME_DOWN  &hml LS(LC(LA(LGUI))) C_NEXT  &none   &none   &none      &none  &none   &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &hmr LCTRL LG(LS(NUMBER_2))  &none
-&none  &kp LG(Z)        &kp LG(X)         &kp LG(C)                  &kp LG(V)                      &none                                         &none      &none                  &none           &none           &none         &none            &kp LS(LG(NUMBER_5))         &none
-&none  &none            &none             &none                      &none                                                        &trans  &trans  &none      &none  &trans  &trans                  &none           &none         &none            &none                        &none
+&none  &none            &none             &none                      &none                          &none                         &none                                      &none   &none           &none           &none         &none            &none                        &none
+&none  &none            &kp LEFT_ARROW    &kp UP_ARROW               &kp DOWN_ARROW                 &kp RIGHT_ARROW               &none                                      &none   &none           &none           &none         &none            &none                        &none
+&none  &hml LCTRL C_PP  &hml LALT C_PREV  &hml LEFT_GUI C_VOLUME_UP  &hml LEFT_SHIFT C_VOLUME_DOWN  &hml LS(LC(LA(LGUI))) C_NEXT  &none   &none   &none      &none  &none    &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &hmr LCTRL LG(LS(NUMBER_2))  &none
+&none  &kp LG(Z)        &kp LG(X)         &kp LG(C)                  &kp LG(V)                      &none                                         &none      &none                   &none           &none           &none         &none            &kp LS(LG(NUMBER_5))         &none
+&none  &none            &none             &none                      &none                                                        &trans  &trans  &none      &none  &kp TAB  &trans                  &none           &none         &none            &none                        &none
             >;
         };
 

@@ -15,11 +15,9 @@
 #include <dt-bindings/zmk/keys.h>
 
 &lt {
-    quick-tap-ms = <175>;
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    hold-trigger-on-release;
-    require-prior-idle-ms = <150>;
+    flavor = "tap-unless-interrupted";
+    tapping-term-ms = <250>;
+    quick-tap-ms = <150>;
 };
 
 / {
@@ -84,12 +82,6 @@
         loader-r {
             bindings = <&bootloader>;
             key-positions = <26 44 58>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <29 30>;
-            require-prior-idle-ms = <100>;
         };
 
         capsword {

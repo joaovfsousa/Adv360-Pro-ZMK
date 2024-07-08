@@ -76,7 +76,7 @@
             bindings = <&mo>, <&none>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             hold-trigger-on-release;
             tapping-term-ms = <150>;
         };

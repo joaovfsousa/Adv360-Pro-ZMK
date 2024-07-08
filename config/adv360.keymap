@@ -74,21 +74,6 @@
     combos {
         compatible = "zmk,combos";
 
-        loader-l {
-            bindings = <&bootloader>;
-            key-positions = <15 29 47>;
-        };
-
-        loader-r {
-            bindings = <&bootloader>;
-            key-positions = <26 44 58>;
-        };
-
-        capsword {
-            bindings = <&caps_word>;
-            key-positions = <47 58>;
-        };
-
         caps-shift {
             bindings = <&caps_word>;
             key-positions = <32 41>;

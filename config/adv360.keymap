@@ -15,8 +15,11 @@
 #include <dt-bindings/zmk/keys.h>
 
 &lt {
-    quick-tap-ms = <300>;
-    flavor = "tap-unless-interrupted";
+    quick-tap-ms = <175>;
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    hold-trigger-on-release;
+    require-prior-idle-ms = <150>;
 };
 
 / {

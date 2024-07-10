@@ -106,12 +106,23 @@
         };
     };
 
+    macros {
+        ss: ss {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp N4 &kp N2 &kp TAB &kp N1 &kp N2 &kp N3 &kp N4 &kp TAB &kp N1 &kp N2 &kp N3 &kp TAB &kp ENTER>;
+            label = "SS";
+            wait-ms = <30>;
+            tap-ms = <30>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         T_base {
             bindings = <
-&none  &none         &none        &none             &none              &none                    &none                                                          &none             &none                    &none              &none        &none        &none                 &none
+&none  &none         &none        &none             &none              &none                    &ss                                                            &none             &none                    &none              &none        &none        &none                 &none
 &none  &kp Q         &kp W        &kp E             &kp R              &kp T                    &none                                                          &none             &kp Y                    &kp U              &kp I        &kp O        &kp P                 &none
 &none  &hml LCTRL A  &hml LALT S  &hmlG LEFT_GUI D  &hml LEFT_SHIFT F  &hml LS(LC(LA(LGUI))) G  &none              &none          &none      &none  &none      &none             &hmr LS(LA(LC(LGUI))) H  &hmr LEFT_SHIFT J  &hmr LGUI K  &hmr LALT L  &hmr LCTRL SEMICOLON  &none
 &none  &kp Z         &kp X        &kp C             &kp V              &kp B                                                      &none      &none                               &kp N                    &kp M              &kp COMMA    &kp DOT      &kp SLASH             &none

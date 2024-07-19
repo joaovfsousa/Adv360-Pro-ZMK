@@ -116,6 +116,24 @@
             hold-trigger-key-positions = <22 23 24 25 26 58 57 43 44 42 56 41 40 54 55 69 70 65 66>;
             hold-while-undecided;
         };
+
+        esctab: esctab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ESCTAB";
+            bindings = <&clt 3 ESCAPE>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        backspaceDelete: backspaceDelete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSPACEDELETE";
+            bindings = <&clt 2 BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
     };
 
     combos {
@@ -143,11 +161,11 @@
 
         T_base {
             bindings = <
-&none  &none         &none        &none             &none                  &none                    &none                                                          &none             &none                    &none                  &none        &none        &none                 &none
-&none  &kp Q         &kp W        &kp E             &kp R                  &kp T                    &none                                                          &none             &kp Y                    &kp U                  &kp I        &kp O        &kp P                 &none
-&none  &hml LCTRL A  &hml LALT S  &hmlG LEFT_GUI D  &hml_hwu LEFT_SHIFT F  &hml LS(LC(LA(LGUI))) G  &none              &none          &none      &none  &none      &none             &hmr LS(LA(LC(LGUI))) H  &hmr_hwu LEFT_SHIFT J  &hmr LGUI K  &hmr LALT L  &hmr LCTRL SEMICOLON  &none
-&none  &kp Z         &kp X        &kp C             &kp V                  &kp B                                                      &none      &none                               &kp N                    &kp M                  &kp COMMA    &kp DOT      &kp SLASH             &none
-&none  &none         &none        &none             &none                                           &space_lt 1 SPACE  &clt 3 ESCAPE  &none      &none  &kp ENTER  &clt 2 BACKSPACE                           &none                  &none        &none        &none                 &none
+&none  &none         &none        &none             &none                  &none                    &none                                                    &none             &none                    &none                  &none        &none        &none                 &none
+&none  &kp Q         &kp W        &kp E             &kp R                  &kp T                    &none                                                    &none             &kp Y                    &kp U                  &kp I        &kp O        &kp P                 &none
+&none  &hml LCTRL A  &hml LALT S  &hmlG LEFT_GUI D  &hml_hwu LEFT_SHIFT F  &hml LS(LC(LA(LGUI))) G  &none              &none    &none      &none  &none      &none             &hmr LS(LA(LC(LGUI))) H  &hmr_hwu LEFT_SHIFT J  &hmr LGUI K  &hmr LALT L  &hmr LCTRL SEMICOLON  &none
+&none  &kp Z         &kp X        &kp C             &kp V                  &kp B                                                &none      &none                               &kp N                    &kp M                  &kp COMMA    &kp DOT      &kp SLASH             &none
+&none  &none         &none        &none             &none                                           &space_lt 1 SPACE  &esctab  &none      &none  &kp ENTER  &backspaceDelete                           &none                  &none        &none        &none                 &none
             >;
         };
 

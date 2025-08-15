@@ -18,8 +18,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     behaviors {
@@ -163,7 +161,7 @@
         T_numbers {
             bindings = <
 &none  &none                &none               &none                   &none                     &none                           &none                                     &none  &none                            &none                     &none               &none               &none                &none
-&none  &kp NUMBER_6         &kp N7              &kp N8                  &kp N9                    &kp N0                          &none                                     &none  &none                            &none                     &none               &none               &none                &none
+&none  &kp LA(NUMBER_6)     &kp LA(N7)          &kp LA(N8)              &kp LA(N9)                &kp LA(N0)                      &none                                     &none  &none                            &none                     &none               &none               &none                &none
 &none  &hml LCTRL NUMBER_1  &hml LALT NUMBER_2  &hml LEFT_GUI NUMBER_3  &hml LEFT_SHIFT NUMBER_4  &hml LS(LC(LA(LGUI))) NUMBER_5  &none   &none   &none      &none  &none   &none  &hmr LS(LA(LC(EQUAL))) NUMBER_6  &hmr LEFT_SHIFT NUMBER_7  &hmr LGUI NUMBER_8  &hmr LALT NUMBER_9  &hmr LCTRL NUMBER_0  &none
 &none  &kp LA(NUMBER_1)     &kp LA(NUMBER_2)    &kp LA(NUMBER_3)        &kp LA(NUMBER_4)          &kp LA(NUMBER_5)                                &none      &none                 &kp LA(NUMBER_6)                 &kp LA(NUMBER_7)          &kp LA(NUMBER_8)    &kp LA(NUMBER_9)    &kp LA(NUMBER_0)     &none
 &none  &none                &none               &none                   &none                                                     &trans  &trans  &none      &none  &trans  &mo 4                                   &none                     &none               &none               &none                &none

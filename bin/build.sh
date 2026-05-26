@@ -6,19 +6,27 @@ PWD=$(pwd)
 TIMESTAMP="${TIMESTAMP:-$(date -u +"%Y%m%d%H%M")}"
 COMMIT="${COMMIT:-$(echo xxxxxx)}"
 
-# West Build (left)
-west build -s zmk/app -p -d build/left -b adv360_left -S studio-rpc-usb-uart -- -DZMK_CONFIG="${PWD}/config" -DCONFIG_ZMK_STUDIO=y
-# Adv360 Left Kconfig file
-grep -vE '(^#|^$)' build/left/zephyr/.config
-# Rename zmk.uf2
-cp build/left/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-left-clique.uf2"
+BUILD_LEFT="${BUILD_LEFT:-true}"
+BUILD_RIGHT="${BUILD_RIGHT:-true}"
+BUILD_DONGLE="${BUILD_DONGLE:-true}"
 
-# Build right side if selected
+# West Build (left)
+if [ "${BUILD_LEFT}" = true ]; then
+    west build -s zmk/app -p -d build/left -b adv360_left -- -DZMK_CONFIG="${PWD}/config"
+    grep -vE '(^#|^$)' build/left/zephyr/.config
+    cp build/left/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-left.uf2"
+fi
+
+# West Build (right)
 if [ "${BUILD_RIGHT}" = true ]; then
-    # West Build (right)
     west build -s zmk/app -p -d build/right -b adv360_right -- -DZMK_CONFIG="${PWD}/config"
-    # Adv360 Right Kconfig file
     grep -vE '(^#|^$)' build/right/zephyr/.config
-    # Rename zmk.uf2
-    cp build/right/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-right-clique.uf2"
+    cp build/right/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-right.uf2"
+fi
+
+# West Build (dongle) - this is the central, ZMK Studio lives here.
+if [ "${BUILD_DONGLE}" = true ]; then
+    west build -s zmk/app -p -d build/dongle -b adv360_dongle -S studio-rpc-usb-uart -- -DZMK_CONFIG="${PWD}/config" -DCONFIG_ZMK_STUDIO=y
+    grep -vE '(^#|^$)' build/dongle/zephyr/.config
+    cp build/dongle/zephyr/zmk.uf2 "./firmware/${TIMESTAMP}-${COMMIT}-dongle.uf2"
 fi

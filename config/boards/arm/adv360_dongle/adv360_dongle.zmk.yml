@@ -1,0 +1,11 @@
+file_format: "1"
+id: adv360_dongle
+name: Adv360 Dongle
+type: board
+url: https://kinesis-ergo.com/keyboards/advantage360
+arch: arm
+features:
+  - keys
+outputs:
+  - usb
+  - ble

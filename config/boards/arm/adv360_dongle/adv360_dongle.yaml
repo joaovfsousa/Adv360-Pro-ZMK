@@ -1,0 +1,13 @@
+identifier: adv360_dongle
+name: Adv360 Dongle
+type: keyboard
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - gpio
+  - usb_device
+  - nvs
+  - ble

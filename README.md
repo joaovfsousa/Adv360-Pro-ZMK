@@ -1,5 +1,15 @@
 # Kinesis Advantage 360 Pro ZMK Config
 
+## Dongle Mode
+
+This config builds the Advantage 360 Pro in **dongle mode**: both keyboard halves act as BLE peripherals and a separate nRF52840 dongle (e.g. nice!nano v2, ProMicro nRF52840 "SuperMini", or any pin-compatible board) is the BLE central, exposing USB HID to the host. This is intended for use with a KVM — the dongle stays plugged into the KVM and the halves stay wireless.
+
+Three firmware files are produced by every build: `left.uf2`, `right.uf2`, and `dongle.uf2`. The keymap, macros and all behaviors are evaluated on the dongle; the halves only scan their matrices and forward events.
+
+> **Heads up:** Switching to dongle firmware invalidates the existing BLE bonds between the halves. After flashing all three devices you need to clear bonds on both halves and on the dongle, then let them pair freshly (see [Flashing firmware](#flashing-firmware)).
+
+> **Hardware compatibility:** The dongle board target (`adv360_dongle`) assumes an nRF52840 with USB and a 32 kHz crystal. nice!nano v2, ProMicro nRF52840 / SuperMini and similar ProMicro-pinout boards all fit. The dongle target does not use any specific GPIOs — only USB and BLE — so any of those boards works without pin remapping.
+
 ## Modifying the keymap
 
 [The ZMK documentation](https://zmk.dev/docs) covers both basic and advanced functionality and has a table of OS compatibility for keycodes. Please note that the RGB Underglow, Backlight and Power Management sections are not relevant to the Advantage 360 Pro's custom ZMK fork. For more information see [this note](#note)
@@ -70,25 +80,33 @@ Creating the docker container takes some time. Therefore `make clean_firmware` c
 
 ## Flashing firmware
 
-Follow the programming instruction on page 8 of the [Quick Start Guide](https://kinesis-ergo.com/wp-content/uploads/Advantage360-Professional-QSG-v8-25-22.pdf) to flash the firmware.
+Three firmware files are produced per build: `left.uf2`, `right.uf2`, and `dongle.uf2`. All three must be flashed for dongle mode to work.
 
 ### Overview
 
-1. Extract the firmwares from the archive downloaded from the GitHub build job (If using the cloud builder) or the firmware folder (If building locally).
-1. Connect the left side keyboard to USB.
-1. Press Mod+macro1 to put the left side into bootloader mode; it should attach to your computer as a USB drive.
-1. Copy `left.uf2` to the USB drive and it will disconnect.
-1. Power off both keyboards (by unplugging them and making sure the switches are off).
-1. Turn on the left side keyboard with the switch.
-1. Connect the right side keyboard to USB to power it on.
-1. Press Mod+macro3 to put the right side into bootloader mode to attach it as a USB drive.
-1. Copy `right.uf2` to the mounted drive.
-1. Unplug the right side keyboard and turn it back on.
-1. Enjoy!
+Suggested order is **halves first, dongle last**, because the dongle starts scanning for peripherals immediately once flashed.
 
-> Note: There are also physical reset buttons on both keyboards which can be used to enter and exit the bootloader mode. Their location is described in section 2.7 on page 9 in the [User Manual](https://kinesis-ergo.com/wp-content/uploads/Advantage360-ZMK-KB360-PRO-Users-Manual-v3-10-23.pdf) and use is described in section 5.9 on page 14. 
+1. Extract the firmwares from the archive downloaded from the GitHub build job (or the `firmware/` folder if building locally).
+1. **Wipe stale bonds on each half** (only needed if you're switching from non-dongle firmware):
+    * Put the half into bootloader mode using the physical reset button (location: section 2.7 of the [User Manual](https://kinesis-ergo.com/wp-content/uploads/Advantage360-ZMK-KB360-PRO-Users-Manual-v3-10-23.pdf); usage: section 5.9).
+    * Copy `settings-reset.uf2` (in this repo) to the mounted drive. It will reboot.
+    * Immediately re-enter bootloader mode for the next step.
+1. **Flash the left half:**
+    * In bootloader mode, copy `left.uf2` to the mounted drive; it will reboot and disconnect.
+    * Power the half off with its hardware switch.
+1. **Flash the right half:** same procedure with `right.uf2`. Power it off when done.
+1. **Flash the dongle:**
+    * Plug the dongle into USB and enter its bootloader mode. On nice!nano v2 / ProMicro nRF52840 (SuperMini etc.) this is a **double-tap of the RESET button** (or short RST to GND twice for boards without a button).
+    * If you previously paired this dongle, copy `settings-reset.uf2` first to wipe its bonds, then re-enter bootloader.
+    * Copy `dongle.uf2` to the mounted drive.
+1. **Power on both halves** (switch on). The dongle should discover and pair with both within a few seconds.
+1. Done — the dongle now reports keys to the host as a USB HID device.
+
+> Note: If a half fails to connect to the dongle after a flash, the bonds are out of sync. Re-flash `settings-reset.uf2` to that half (and to the dongle if needed) and re-flash the firmware.
 
 > Note: Some operating systems wont always treat the drive as ejected after the settings-reset file is flashed or may throw a spurious error, this doesn't mean that the flashing process has failed.
+
+> Note: The legacy "Mod+macro1 / Mod+macro3" bootloader-entry shortcut from Kinesis's stock firmware is not used in dongle mode — use the physical reset buttons.
 
 ### Upgrading from V2 to V3
 
